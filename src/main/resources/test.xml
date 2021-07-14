@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <people xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:schemaLocation="people_schema.xsd">
-<employee id="1">
-<pesel>81032401612</pesel>
-<firstname>John</firstname>
-<lastname>Silver</lastname>
-<phone>555143111</phone>
-</employee>
+    <employee id="1">
+        <pesel>81032401612</pesel>
+        <firstname>John</firstname>
+        <lastname>Silver</lastname>
+        <phone>555143111</phone>
+    </employee>
+    <employee id="2">
+        <pesel>55555555555</pesel>
+        <firstname>Micheal</firstname>
+        <lastname>Milko</lastname>
+        <phone>11111111</phone>
+    </employee>
 </people>

@@ -15,16 +15,15 @@ import org.xml.sax.SAXException;
 
 public class ReadXML {
 
-    public ArrayList<Employee> readFromXMLFile() throws ParserConfigurationException, IOException, SAXException {
+    public ArrayList<Employee> readFromXMLFile(String filePath) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
-        Document document = db.parse(new File("src/main/resources/people.xml"));
+        Document document = db.parse(new File(filePath));
         NodeList nodeList = document.getElementsByTagName("employee");
         NodeList nodeList2 = document.getElementsByTagName("pesel");
         NodeList nodeList3 = document.getElementsByTagName("firstname");
         NodeList nodeList4 = document.getElementsByTagName("lastname");
         NodeList nodeList5 = document.getElementsByTagName("phone");
-
 
         String id = null;
         String pesel;
@@ -49,14 +48,14 @@ public class ReadXML {
             employeeList.add(new Employee(id, pesel, firstname, lastname, phone));
         }
 
-        System.out.println(employeeList);
+        System.out.println("File " + filePath + " successfully read.");
         return employeeList;
     }
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
 
         ReadXML readXML = new ReadXML();
-        readXML.readFromXMLFile();
+
     }
 
 

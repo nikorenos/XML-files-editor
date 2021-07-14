@@ -1,5 +1,6 @@
 package com.creativelabs.xmleditor;
 
+import com.creativelabs.xmleditor.exception.DuplicateException;
 import com.creativelabs.xmleditor.exception.NotFoundException;
 
 import java.util.ArrayList;
@@ -7,16 +8,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class EmployeeListHandle {
-    public List<Employee> modifyEmployeeList(Employee employee, ArrayList<Employee> list) {
+    public List<Employee> modifyEmployeeList(Employee employee, List<Employee> list) {
         String employeeId = employee.getId();
-        ArrayList<Employee> foundEmployeeList = (ArrayList<Employee>) list.stream()
+        List<Employee> foundEmployeeList = list.stream()
                 .filter(i -> i.getId().equals(employeeId))
                 .collect(Collectors.toList());
 
         if (foundEmployeeList.size()>0) {
             Employee foundEmployee = foundEmployeeList.get(0);
             list.set(list.indexOf(foundEmployee), employee);
-            System.out.println(list);
         } else {
             throw new NotFoundException("Employee id " + employeeId + " is not found.");
         }
@@ -25,15 +25,14 @@ public class EmployeeListHandle {
 
     public List<Employee> addEmployeeToList(Employee employee, List<Employee> list) {
         String employeeId = employee.getId();
-        ArrayList<Employee> foundEmployeeList = (ArrayList<Employee>) list.stream()
+        List<Employee> foundEmployeeList = list.stream()
                 .filter(i -> i.getId().equals(employeeId))
                 .collect(Collectors.toList());
 
         if (foundEmployeeList.size()>0) {
-            System.out.println("Employee with " + employeeId + " is already on the list!");
+            throw new DuplicateException("Employee with id " + employeeId + " is already in the file.");
         } else {
             list.add(employee);
-            System.out.println(list);
         }
         return list;
     }
@@ -47,9 +46,8 @@ public class EmployeeListHandle {
         if (foundEmployeeList.size()>0) {
             Employee foundEmployee = foundEmployeeList.get(0);
             list.remove(foundEmployee);
-            System.out.println(list);
         } else  {
-            throw new NotFoundException("Employee id " + employeeId + " is not found.");
+            throw new NotFoundException("Employee with id " + employeeId + " is not found.");
         }
         return list;
     }
