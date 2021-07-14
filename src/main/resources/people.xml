@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<people xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="people_schema.xsd">
+    <employee id="1">
+        <pesel>81032401612</pesel>
+        <firstname>John</firstname>
+        <lastname>Smith</lastname>
+        <phone>500300200</phone>
+    </employee>
+    <employee id="2">
+        <pesel>61032401612</pesel>
+        <firstname>Mark</firstname>
+        <lastname>Twain</lastname>
+        <phone>100300200</phone>
+    </employee>
+    <employee id="3">
+        <pesel>41032401612</pesel>
+        <firstname>John</firstname>
+        <lastname>Smith</lastname>
+        <phone>200300200</phone>
+    </employee>
+</people>
