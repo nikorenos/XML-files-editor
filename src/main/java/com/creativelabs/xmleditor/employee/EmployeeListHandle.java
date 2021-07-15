@@ -1,4 +1,4 @@
-package com.creativelabs.xmleditor;
+package com.creativelabs.xmleditor.employee;
 
 import com.creativelabs.xmleditor.exception.DuplicateException;
 import com.creativelabs.xmleditor.exception.NotFoundException;

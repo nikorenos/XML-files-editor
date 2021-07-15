@@ -1,4 +1,4 @@
-package com.creativelabs.xmleditor;
+package com.creativelabs.xmleditor.employee;
 
 public class Employee {
     private String id;
