@@ -7,9 +7,15 @@
         <phone>500300200</phone>
     </employee>
     <employee id="3">
-        <pesel>41032401612</pesel>
-        <firstname>John</firstname>
-        <lastname>Smith</lastname>
-        <phone>200300200</phone>
+        <pesel>99115555555</pesel>
+        <firstname>Robert</firstname>
+        <lastname>Zigi</lastname>
+        <phone>11111111</phone>
+    </employee>
+    <employee id="21">
+        <pesel>11115555555</pesel>
+        <firstname>Micheal</firstname>
+        <lastname>Zigi</lastname>
+        <phone>11111111</phone>
     </employee>
 </people>
